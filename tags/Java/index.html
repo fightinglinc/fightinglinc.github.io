@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python Mock Object Library | Linchen&#39;s blog</title>
+  <title>Tag: Java | Linchen&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="What Is MockingA mock object substitutes and imitates a real object within a testing environment. It helps to improve the quality of our tests. Replacing the actual request with a mock object would al">
-<meta name="keywords" content="Notes,Python">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Python Mock Object Library">
-<meta property="og:url" content="http://yoursite.com/2019/08/05/Python Mock Object Library/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Linchen&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/tags/Java/index.html">
 <meta property="og:site_name" content="Linchen&#39;s blog">
-<meta property="og:description" content="What Is MockingA mock object substitutes and imitates a real object within a testing environment. It helps to improve the quality of our tests. Replacing the actual request with a mock object would al">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-05T21:43:32.829Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python Mock Object Library">
-<meta name="twitter:description" content="What Is MockingA mock object substitutes and imitates a real object within a testing environment. It helps to improve the quality of our tests. Replacing the actual request with a mock object would al">
+<meta name="twitter:title" content="Linchen&#39;s blog">
   
     <link rel="alternative" href="/atom.xml" title="Linchen&#39;s blog" type="application/atom+xml">
   
@@ -151,82 +146,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Python Mock Object Library" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Python Mock Object Library
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/09/23/Java-Clone/" class="archive-article-date">
+  	<time datetime="2019-09-23T20:01:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/09/23/Java-Clone/">Java Clone</a>
     </h1>
   
 
-        
-        <a href="/2019/08/05/Python Mock Object Library/" class="archive-article-date">
-  	<time datetime="2019-08-05T20:12:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="What-Is-Mocking"><a href="#What-Is-Mocking" class="headerlink" title="What Is Mocking"></a>What Is Mocking</h2><p>A mock object substitutes and imitates a real object within a testing environment. It helps to improve the quality of our tests. Replacing the actual request with a mock object would allow you to simulate external service outages and successful responses.</p>
-<h2 id="Python-Mock-Library"><a href="#Python-Mock-Library" class="headerlink" title="Python Mock Library"></a>Python Mock Library</h2><p>The Python <strong>mock object library</strong> is unittest.mock. The class is called <strong>Mock</strong>.  Also this library provides a function, called patch(). You can use it as a decorator or a context manager.</p>
-<a id="more"></a>
-<p>patch()<br>Usually, you use patch() as a decorator or a context manager to provide a scope in which you will mock the target object.</p>
-<h3 id="patch-as-a-Decorator"><a href="#patch-as-a-Decorator" class="headerlink" title="patch() as a Decorator"></a>patch() as a Decorator</h3><p>If you want to mock an object for the duration of your entire test function, you can use patch() as a function decorator.<br>To see how this works, reorganize your my_calendar.py file by putting the logic and tests into separate files:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_weekday</span><span class="params">()</span>:</span></span><br><span class="line">    today = datetime.today()</span><br><span class="line">    <span class="comment"># Python's datetime library treats Monday as 0 and Sunday as 6</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="number">0</span> &lt;= today.weekday() &lt; <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_holidays</span><span class="params">()</span>:</span></span><br><span class="line">    r = requests.get(<span class="string">'http://localhost/api/holidays'</span>)</span><br><span class="line">    <span class="keyword">if</span> r.status_code == <span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> r.json()</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
-
-<p>These functions are now in their own file, separate from their tests. Next, you’ll re-create your tests in a file called tests.py.</p>
-<p>Up to this point, you’ve monkey patched objects in the file in which they exist. Monkey patching is the replacement of one object with another at runtime. Now, you’ll use patch() to replace your objects in my_calendar.py:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> my_calendar <span class="keyword">import</span> get_holidays</span><br><span class="line"><span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> Timeout</span><br><span class="line"><span class="keyword">from</span> unittest.mock <span class="keyword">import</span> patch</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestCalendar</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line"><span class="meta">    @patch('my_calendar.requests')</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_get_holidays_timeout</span><span class="params">(self, mock_requests)</span>:</span></span><br><span class="line">            mock_requests.get.side_effect = Timeout</span><br><span class="line">            <span class="keyword">with</span> self.assertRaises(Timeout):</span><br><span class="line">                get_holidays()</span><br><span class="line">                mock_requests.get.assert_called_once()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
-
-<p>Originally, you created a Mock and patched requests in the local scope. Now, you need to access the requests library in my_calendar.py from tests.py.</p>
-<p>For this case, you used patch() as a decorator and passed the target object’s path. The target path was ‘my_calendar.requests’ which consists of the module name and the object.</p>
-<p>You also defined a new parameter for the test function. patch() uses this parameter to pass the mocked object into your test. From there, you can modify the mock or make assertions as necessary.</p>
-<p>You can execute this test module to ensure it’s working as expected:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> python tests.py</span><br><span class="line">.</span><br><span class="line">-------------------------------------------------------</span><br><span class="line">Ran 1 test in 0.001s</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
-
-<p>Technical Detail: patch() returns an instance of MagicMock, which is a Mock subclass. MagicMock is useful because it implements most magic methods for you, such as .<strong>len</strong>(), .<strong>str</strong>(), and .<strong>iter</strong>(), with reasonable defaults.</p>
-<p>Using patch() as a decorator worked well in this example. In some cases, it is more readable, more effective, or easier to use patch() as a context manager.</p>
-<h3 id="patch-as-a-Context-Manager"><a href="#patch-as-a-Context-Manager" class="headerlink" title="patch() as a Context Manager"></a>patch() as a Context Manager</h3><p>Sometimes, you’ll want to use patch() as a context manager rather than a decorator. Some reasons why you might prefer a context manager include the following:</p>
-<p>You only want to mock an object for a part of the test scope.<br>You are already using too many decorators or parameters, which hurts your test’s readability.<br>To use patch() as a context manager, you use Python’s with statement:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> my_calendar <span class="keyword">import</span> get_holidays</span><br><span class="line"><span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> Timeout</span><br><span class="line"><span class="keyword">from</span> unittest.mock <span class="keyword">import</span> patch</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestCalendar</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_get_holidays_timeout</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">with</span> patch(<span class="string">'my_calendar.requests'</span>) <span class="keyword">as</span> mock_requests:</span><br><span class="line">            mock_requests.get.side_effect = Timeout</span><br><span class="line">            <span class="keyword">with</span> self.assertRaises(Timeout):</span><br><span class="line">                get_holidays()</span><br><span class="line">                mock_requests.get.assert_called_once()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
-
-<p>When the test exits the with statement, patch() replaces the mocked object with the original.</p>
-<h3 id="Managing-a-Mock’s-Side-Effects"><a href="#Managing-a-Mock’s-Side-Effects" class="headerlink" title="Managing a Mock’s Side Effects"></a>Managing a Mock’s Side Effects</h3><p><strong>.side_effect</strong> defines what happens when you call the mocked function. This can either be a function to be called when the mock is called, an iterable or an exception (class or instance) to be raised.<br>We have a get_holiday() function and want to test how it will respond to a connection timeout by setting requests.get.side_effect. </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> Timeout</span><br><span class="line"><span class="keyword">from</span> unittest.mock <span class="keyword">import</span> Mock</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mock requests to control its behavior</span></span><br><span class="line">requests = Mock() </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_holidays</span><span class="params">()</span>:</span></span><br><span class="line">    r = requests.get(<span class="string">'http://localhost/api/holidays'</span>)</span><br><span class="line">    <span class="keyword">if</span> r.status_code == <span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> r.json()</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestCalendar</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_get_holidays_timeout</span><span class="params">(self)</span>:</span></span><br><span class="line">	    <span class="comment"># Test a connection timeout</span></span><br><span class="line">		requests.get.side_effect = Timeout        </span><br><span class="line">		<span class="keyword">with</span> self.assertRaises(Timeout):</span><br><span class="line">            get_holidays()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -236,121 +185,25 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/05/Python Mock Object Library/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/08/05/Decorators/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Partials, Wraps and Decorators
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/08/05/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -373,9 +226,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

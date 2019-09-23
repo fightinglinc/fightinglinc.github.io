@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python Mock Object Library | Linchen&#39;s blog</title>
+  <title>Java Clone | Linchen&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="What Is MockingA mock object substitutes and imitates a real object within a testing environment. It helps to improve the quality of our tests. Replacing the actual request with a mock object would al">
-<meta name="keywords" content="Notes,Python">
+  <meta name="description" content="Clone A clone is an exact copy of the original. In java, it essentially means the ability to create an object with similar state as the original object. The java clone() method provides this functiona">
+<meta name="keywords" content="Notes,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python Mock Object Library">
-<meta property="og:url" content="http://yoursite.com/2019/08/05/Python Mock Object Library/index.html">
+<meta property="og:title" content="Java Clone">
+<meta property="og:url" content="http://yoursite.com/2019/09/23/Java-Clone/index.html">
 <meta property="og:site_name" content="Linchen&#39;s blog">
-<meta property="og:description" content="What Is MockingA mock object substitutes and imitates a real object within a testing environment. It helps to improve the quality of our tests. Replacing the actual request with a mock object would al">
+<meta property="og:description" content="Clone A clone is an exact copy of the original. In java, it essentially means the ability to create an object with similar state as the original object. The java clone() method provides this functiona">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-05T21:43:32.829Z">
+<meta property="og:updated_time" content="2019-09-23T20:22:59.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python Mock Object Library">
-<meta name="twitter:description" content="What Is MockingA mock object substitutes and imitates a real object within a testing environment. It helps to improve the quality of our tests. Replacing the actual request with a mock object would al">
+<meta name="twitter:title" content="Java Clone">
+<meta name="twitter:description" content="Clone A clone is an exact copy of the original. In java, it essentially means the ability to create an object with similar state as the original object. The java clone() method provides this functiona">
   
     <link rel="alternative" href="/atom.xml" title="Linchen&#39;s blog" type="application/atom+xml">
   
@@ -151,52 +151,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Python Mock Object Library" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java-Clone" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Python Mock Object Library
+      Java Clone
     </h1>
   
 
         
-        <a href="/2019/08/05/Python Mock Object Library/" class="archive-article-date">
-  	<time datetime="2019-08-05T20:12:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
+        <a href="/2019/09/23/Java-Clone/" class="archive-article-date">
+  	<time datetime="2019-09-23T20:01:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="What-Is-Mocking"><a href="#What-Is-Mocking" class="headerlink" title="What Is Mocking"></a>What Is Mocking</h2><p>A mock object substitutes and imitates a real object within a testing environment. It helps to improve the quality of our tests. Replacing the actual request with a mock object would allow you to simulate external service outages and successful responses.</p>
-<h2 id="Python-Mock-Library"><a href="#Python-Mock-Library" class="headerlink" title="Python Mock Library"></a>Python Mock Library</h2><p>The Python <strong>mock object library</strong> is unittest.mock. The class is called <strong>Mock</strong>.  Also this library provides a function, called patch(). You can use it as a decorator or a context manager.</p>
+        <h2 id="Clone"><a href="#Clone" class="headerlink" title="Clone"></a>Clone</h2><blockquote>
+<p>A <a href="https://en.wikipedia.org/wiki/Clone_(Java_method)" target="_blank" rel="noopener"><strong>clone</strong></a> is an exact copy of the original. <strong>In java, it essentially means the ability to create an object with similar state as the original object.</strong> The java <code>clone()</code> method provides this functionality.</p>
+</blockquote>
 <a id="more"></a>
-<p>patch()<br>Usually, you use patch() as a decorator or a context manager to provide a scope in which you will mock the target object.</p>
-<h3 id="patch-as-a-Decorator"><a href="#patch-as-a-Decorator" class="headerlink" title="patch() as a Decorator"></a>patch() as a Decorator</h3><p>If you want to mock an object for the duration of your entire test function, you can use patch() as a function decorator.<br>To see how this works, reorganize your my_calendar.py file by putting the logic and tests into separate files:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_weekday</span><span class="params">()</span>:</span></span><br><span class="line">    today = datetime.today()</span><br><span class="line">    <span class="comment"># Python's datetime library treats Monday as 0 and Sunday as 6</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="number">0</span> &lt;= today.weekday() &lt; <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_holidays</span><span class="params">()</span>:</span></span><br><span class="line">    r = requests.get(<span class="string">'http://localhost/api/holidays'</span>)</span><br><span class="line">    <span class="keyword">if</span> r.status_code == <span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> r.json()</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
 
-<p>These functions are now in their own file, separate from their tests. Next, you’ll re-create your tests in a file called tests.py.</p>
-<p>Up to this point, you’ve monkey patched objects in the file in which they exist. Monkey patching is the replacement of one object with another at runtime. Now, you’ll use patch() to replace your objects in my_calendar.py:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> my_calendar <span class="keyword">import</span> get_holidays</span><br><span class="line"><span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> Timeout</span><br><span class="line"><span class="keyword">from</span> unittest.mock <span class="keyword">import</span> patch</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestCalendar</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line"><span class="meta">    @patch('my_calendar.requests')</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_get_holidays_timeout</span><span class="params">(self, mock_requests)</span>:</span></span><br><span class="line">            mock_requests.get.side_effect = Timeout</span><br><span class="line">            <span class="keyword">with</span> self.assertRaises(Timeout):</span><br><span class="line">                get_holidays()</span><br><span class="line">                mock_requests.get.assert_called_once()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
+<h3 id="Shallow-Copy"><a href="#Shallow-Copy" class="headerlink" title="Shallow Copy"></a>Shallow Copy</h3><p>Shallow copy, which is also called reference copy, is the <strong>default implementation</strong> in Java. Shallow copy only copy fields.</p>
+<h3 id="Deep-Copy"><a href="#Deep-Copy" class="headerlink" title="Deep Copy"></a>Deep Copy</h3><p>Deep copy is also called hard copy or clone. </p>
+<blockquote>
+<p>In the deep copy, we create a clone which is independent of original object and making changes in the cloned object should not affect original object.</p>
+</blockquote>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Without using deep copy, that is using shallow copy by default.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">list.add(<span class="number">1</span>);   <span class="comment">// list is [1]</span></span><br><span class="line"></span><br><span class="line">List&lt;List&lt;Integer&gt;&gt; results = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">results.add(list);  <span class="comment">// results: [[1]]</span></span><br><span class="line"></span><br><span class="line">list.add(<span class="number">2</span>);  <span class="comment">// list is [1,2]</span></span><br><span class="line">results.add(list);  <span class="comment">// results is not [[1], [1,2]], in fact, it is [[1,2], [1,2]]</span></span><br><span class="line"></span><br><span class="line">list.add(<span class="number">3</span>);  <span class="comment">// results is [[1,2,3], [1,2,3]]</span></span><br></pre></td></tr></table></figure>
 
-<p>Originally, you created a Mock and patched requests in the local scope. Now, you need to access the requests library in my_calendar.py from tests.py.</p>
-<p>For this case, you used patch() as a decorator and passed the target object’s path. The target path was ‘my_calendar.requests’ which consists of the module name and the object.</p>
-<p>You also defined a new parameter for the test function. patch() uses this parameter to pass the mocked object into your test. From there, you can modify the mock or make assertions as necessary.</p>
-<p>You can execute this test module to ensure it’s working as expected:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> python tests.py</span><br><span class="line">.</span><br><span class="line">-------------------------------------------------------</span><br><span class="line">Ran 1 test in 0.001s</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
-
-<p>Technical Detail: patch() returns an instance of MagicMock, which is a Mock subclass. MagicMock is useful because it implements most magic methods for you, such as .<strong>len</strong>(), .<strong>str</strong>(), and .<strong>iter</strong>(), with reasonable defaults.</p>
-<p>Using patch() as a decorator worked well in this example. In some cases, it is more readable, more effective, or easier to use patch() as a context manager.</p>
-<h3 id="patch-as-a-Context-Manager"><a href="#patch-as-a-Context-Manager" class="headerlink" title="patch() as a Context Manager"></a>patch() as a Context Manager</h3><p>Sometimes, you’ll want to use patch() as a context manager rather than a decorator. Some reasons why you might prefer a context manager include the following:</p>
-<p>You only want to mock an object for a part of the test scope.<br>You are already using too many decorators or parameters, which hurts your test’s readability.<br>To use patch() as a context manager, you use Python’s with statement:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> my_calendar <span class="keyword">import</span> get_holidays</span><br><span class="line"><span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> Timeout</span><br><span class="line"><span class="keyword">from</span> unittest.mock <span class="keyword">import</span> patch</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestCalendar</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_get_holidays_timeout</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">with</span> patch(<span class="string">'my_calendar.requests'</span>) <span class="keyword">as</span> mock_requests:</span><br><span class="line">            mock_requests.get.side_effect = Timeout</span><br><span class="line">            <span class="keyword">with</span> self.assertRaises(Timeout):</span><br><span class="line">                get_holidays()</span><br><span class="line">                mock_requests.get.assert_called_once()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
-
-<p>When the test exits the with statement, patch() replaces the mocked object with the original.</p>
-<h3 id="Managing-a-Mock’s-Side-Effects"><a href="#Managing-a-Mock’s-Side-Effects" class="headerlink" title="Managing a Mock’s Side Effects"></a>Managing a Mock’s Side Effects</h3><p><strong>.side_effect</strong> defines what happens when you call the mocked function. This can either be a function to be called when the mock is called, an iterable or an exception (class or instance) to be raised.<br>We have a get_holiday() function and want to test how it will respond to a connection timeout by setting requests.get.side_effect. </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> Timeout</span><br><span class="line"><span class="keyword">from</span> unittest.mock <span class="keyword">import</span> Mock</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mock requests to control its behavior</span></span><br><span class="line">requests = Mock() </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_holidays</span><span class="params">()</span>:</span></span><br><span class="line">    r = requests.get(<span class="string">'http://localhost/api/holidays'</span>)</span><br><span class="line">    <span class="keyword">if</span> r.status_code == <span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> r.json()</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestCalendar</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_get_holidays_timeout</span><span class="params">(self)</span>:</span></span><br><span class="line">	    <span class="comment"># Test a connection timeout</span></span><br><span class="line">		requests.get.side_effect = Timeout        </span><br><span class="line">		<span class="keyword">with</span> self.assertRaises(Timeout):</span><br><span class="line">            get_holidays()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
+<p>Use deep copy. </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">results.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(list));</span><br></pre></td></tr></table></figure>
 
 
       
@@ -236,7 +225,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -292,7 +281,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/05/Python Mock Object Library/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/23/Java-Clone/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -306,18 +295,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/05/Decorators/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Partials, Wraps and Decorators
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/05/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2019/08/05/Decorators/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Partials, Wraps and Decorators</div>
       <i class="icon-circle-right"></i>
     </a>
   
